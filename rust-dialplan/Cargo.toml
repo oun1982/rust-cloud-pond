@@ -1,0 +1,15 @@
+[package]
+name = "rust_agi_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# เปลี่ยนจากตัวเก่าเป็นตัวนี้
+asterisk-agi = "0.1.1"
+# สำหรับอ่าน/เขียน config file (YAML)
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+# สำหรับ hot reload (watch file changes)
+notify = "6.1"
+# สำหรับ thread-safe config sharing
+once_cell = "1.20"

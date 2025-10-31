@@ -1,0 +1,74 @@
+# IVR Configuration File
+# รองรับหลาย DID พร้อม hot reload (แก้ไขแล้วมีผลทันที ไม่ต้อง restart)
+
+# Default config (ใช้เมื่อไม่พบ DID ใน list)
+default:
+  welcome_sound: "en/custom/new-ivr-osd"
+  invalid_sound: "invalid"
+  goodbye_sound: "vm-goodbye"
+  # Queue mappings (กด 1-9 จะเข้า queue ตามนี้)
+  queues:
+    "1": "10001"
+    "2": "10002"
+    "3": "10003"
+    "4": "10004"
+    "5": "10005"
+    "6": "10006"
+    "7": "10007"
+    "8": "10008"
+    "9": "10009"
+  # Extension dialing settings
+  min_extension_digits: 3
+  max_extension_digits: 4
+  extension_timeout_seconds: 3
+  dial_timeout_seconds: 60
+  dial_options: "t"  # t = allow transfer
+
+# DID-specific configurations
+dids:
+  # DID: 0212345678 - สำนักงานใหญ่
+  "0212345678":
+    welcome_sound: "custom/welcome-hq"
+    invalid_sound: "invalid"
+    goodbye_sound: "vm-goodbye"
+    queues:
+      "1": "10001"  # ฝ่ายขาย
+      "2": "10002"  # ฝ่ายบริการลูกค้า
+      "3": "10003"  # ฝ่ายเทคนิค
+      "9": "10009"  # ผู้จัดการ
+    min_extension_digits: 3
+    max_extension_digits: 4
+    extension_timeout_seconds: 3
+    dial_timeout_seconds: 60
+    dial_options: "t"
+
+  # DID: 0298765432 - สาขา 1
+  "0298765432":
+    welcome_sound: "custom/welcome-branch1"
+    invalid_sound: "invalid"
+    goodbye_sound: "vm-goodbye"
+    queues:
+      "1": "20001"  # ฝ่ายต้อนรับ
+      "2": "20002"  # ฝ่ายบัญชี
+      "3": "20003"  # ฝ่ายจัดส่ง
+    min_extension_digits: 4
+    max_extension_digits: 4
+    extension_timeout_seconds: 3
+    dial_timeout_seconds: 45
+    dial_options: "tT"
+
+  # DID: 0223456789 - ศูนย์บริการลูกค้า
+  "0223456789":
+    welcome_sound: "custom/welcome-support"
+    invalid_sound: "invalid"
+    goodbye_sound: "custom/goodbye-support"
+    queues:
+      "1": "30001"  # Technical Support
+      "2": "30002"  # Sales
+      "3": "30003"  # Billing
+      "4": "30004"  # VIP Support
+    min_extension_digits: 3
+    max_extension_digits: 4
+    extension_timeout_seconds: 5
+    dial_timeout_seconds: 90
+    dial_options: "tTr"

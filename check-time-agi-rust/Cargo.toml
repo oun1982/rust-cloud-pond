@@ -1,0 +1,10 @@
+[package]
+name = "check-time-agi"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+mysql = "25.0.1"
+chrono = "0.4"
+dotenvy = "0.15"
+colored = "2.1"

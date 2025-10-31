@@ -1,0 +1,16 @@
+[package]
+name = "rust-opentab"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# ใช้สำหรับหา home directory ของผู้ใช้ (เทียบเท่า os/user)
+dirs = "5.0" 
+
+# ใช้สำหรับแสดงกล่องข้อความ error (เทียบเท่า dlgs)
+native-dialog = "0.7"
+
+# ใช้สำหรับจำลองการกดคีย์บอร์ด (เทียบเท่า robotgo)
+enigo = "0.2"

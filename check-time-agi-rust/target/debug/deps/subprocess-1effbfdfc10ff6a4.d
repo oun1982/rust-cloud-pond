@@ -1,0 +1,12 @@
+/opt/rust-project/check-time-agi-rust/target/debug/deps/subprocess-1effbfdfc10ff6a4.d: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/lib.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/builder.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/communicate.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/popen.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/posix.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/os_common.rs
+
+/opt/rust-project/check-time-agi-rust/target/debug/deps/libsubprocess-1effbfdfc10ff6a4.rlib: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/lib.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/builder.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/communicate.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/popen.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/posix.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/os_common.rs
+
+/opt/rust-project/check-time-agi-rust/target/debug/deps/libsubprocess-1effbfdfc10ff6a4.rmeta: /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/lib.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/builder.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/communicate.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/popen.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/posix.rs /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/os_common.rs
+
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/lib.rs:
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/builder.rs:
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/communicate.rs:
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/popen.rs:
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/posix.rs:
+/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/subprocess-0.2.9/src/os_common.rs:

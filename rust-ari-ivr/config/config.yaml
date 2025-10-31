@@ -1,0 +1,85 @@
+asterisk:
+  host: "localhost"
+  port: 8088
+  username: "ari"
+  password: "password"
+  app_name: "inbound-custom"
+
+ivr:
+  greetings:
+    worktime:
+      enabled: true
+      start_time: "08:30:00"
+      end_time: "17:30:00"
+      days:
+        - "Monday"
+        - "Tuesday"
+        - "Wednesday"
+        - "Thursday"
+        - "Friday"
+    sounds:
+      # ระบุ path ที่สัมพันธ์กับ /var/lib/asterisk/sounds/
+      worktime: "en/custom/new-ivr-osd"
+      overtime: "en/custom/overtime_all"
+
+  menu:
+    main_menu_sound: "en/custom/new-ivr-osd"
+    invalid_sound: "en/custom/invalid-option"
+    timeout_sound: "en/custom/timeout"
+    timeout_seconds: 10
+    max_retries: 3
+
+  queues:
+    - dtmf: "1"
+      queue_name: "10001"
+      description: "Queue 10001 - Sales"
+
+    - dtmf: "2"
+      queue_name: "10002"
+      description: "Queue 10002 - Support"
+
+    - dtmf: "3"
+      queue_name: "10003"
+      description: "Queue 10003 - Billing"
+
+    - dtmf: "4"
+      queue_name: "10004"
+      description: "Queue 10004 - Technical"
+
+    - dtmf: "5"
+      queue_name: "10005"
+      description: "Queue 10005 - Retention"
+
+    - dtmf: "6"
+      queue_name: "10006"
+      description: "Queue 10006 - English Support"
+
+    - dtmf: "7"
+      queue_name: "10007"
+      description: "Queue 10007 - VIP"
+
+    - dtmf: "8"
+      queue_name: "10008"
+      description: "Queue 10008 - Operator"
+
+# ตัวอย่าง multi-DID IVR overrides (เลือก IVR ตาม DID/extension ที่ถูกเรียก)
+# did_overrides:
+#   "021234567":
+#     greetings:
+#       worktime:
+#         enabled: true
+#         start_time: "08:30:00"
+#         end_time: "17:30:00"
+#         days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+#       sounds:
+#         worktime: "en/custom/companyA_worktime"
+#         overtime: "en/custom/companyA_overtime"
+#     menu:
+#       main_menu_sound: "en/custom/companyA_menu"
+#       invalid_sound: "en/custom/invalid-option"
+#       timeout_sound: "en/custom/timeout"
+#       timeout_seconds: 3
+#       max_retries: 2
+#     queues:
+#       - { dtmf: "1", queue_name: "11001", description: "CompanyA Sales" }
+#       - { dtmf: "2", queue_name: "11002", description: "CompanyA Support" }

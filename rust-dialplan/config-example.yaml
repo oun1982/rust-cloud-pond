@@ -1,0 +1,34 @@
+# ตัวอย่าง Config สำหรับ Testing
+# คัดลอกไปที่ /etc/asterisk/ivr-config.yaml
+
+default:
+  welcome_sound: "en/custom/new-ivr-osd"
+  invalid_sound: "invalid" 
+  goodbye_sound: "vm-goodbye"
+  queues:
+    "1": "10001"
+    "2": "10002"
+    "3": "10003"
+    "4": "10004"
+    "5": "10005"
+  min_extension_digits: 3
+  max_extension_digits: 4
+  extension_timeout_seconds: 3
+  dial_timeout_seconds: 60
+  dial_options: "t"
+
+dids:
+  # เพิ่ม DID ของคุณที่นี่
+  "0812345678":
+    welcome_sound: "custom/welcome"
+    invalid_sound: "invalid"
+    goodbye_sound: "vm-goodbye"
+    queues:
+      "1": "10001"
+      "2": "10002"
+      "3": "10003"
+    min_extension_digits: 3
+    max_extension_digits: 4
+    extension_timeout_seconds: 3
+    dial_timeout_seconds: 60
+    dial_options: "t"
