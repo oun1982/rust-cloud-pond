@@ -23,10 +23,7 @@ DATABASE_URL=mysql://username:password@hostname:port/dcall
 ### 3. การใช้งาน
 ```bash
 # ส่ง push notification ไปยัง agents ใน queue 10001
-cargo run -- --queueid 10001
-
-# หรือใช้ short form
-cargo run -- -q 10001
+cargo run -- 10001
 ```
 
 ### 4. การใช้งาน (binary ที่ build แล้ว)
@@ -35,7 +32,7 @@ cargo run -- -q 10001
 cargo build --release
 
 # Run binary
-./target/release/rust-pushnoti --queueid 10001
+./target/release/rust-pushnoti 10001
 ```
 
 ## Environment Variables
@@ -46,7 +43,7 @@ cargo build --release
 
 เมื่อรันคำสั่ง:
 ```bash
-cargo run -- --queueid 10001
+cargo run -- 10001
 ```
 
 โปรแกรมจะ:

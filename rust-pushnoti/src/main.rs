@@ -9,7 +9,6 @@ use std::env;
 #[command(about = "Send push notifications to agents in a queue")]
 struct Args {
     /// Queue ID to query
-    #[arg(short, long)]
     queueid: u32,
 }
 
