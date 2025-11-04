@@ -1,0 +1,37 @@
+use asterisk_ami_dep::{AmiConnection, Tag, find_tag};
+use tokio::io::Result;
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    let host = "192.168.60.1:5038"; // AMI port
+    let username = "ami";
+    let password = "password";
+
+    // connect()
+    let conn = AmiConnection::connect(host).await
+        .expect("Failed to connect to AMI");
+
+    // login
+    let _ = conn.send(vec![
+        Tag::from("Action", "Login"),
+        Tag::from("Username", username),
+        Tag::from("Secret", password),
+    ]).await;
+
+    println!("✅ Connected to Asterisk AMI!");
+
+    let mut rx = conn.events();
+
+    // ✅ แก้ while let ให้ match กับ Result
+    while let Ok(Some(packet)) = rx.recv().await {
+        if let Some(ev) = find_tag(&packet, "Event") {
+            println!("📥 Event: {}", ev);
+        }
+        for tag in packet {
+            println!("  {}: {}", tag.key, tag.value);
+        }
+        println!("----------------------------");
+    }
+
+    Ok(())
+}

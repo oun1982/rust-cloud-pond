@@ -3,21 +3,20 @@ use mysql::*;
 use mysql::prelude::*;
 use mysql::{Opts, OptsBuilder};
 use chrono::{Local, Timelike, Datelike};
-use dotenvy::dotenv;
 use std::env;
 
 fn main() {
     // Try loading environment from multiple locations for flexibility
-    // 1) current working directory (.env)
-    dotenv().ok();
+    // 1) current working directory (.env.checktime)
+    let _ = dotenvy::from_filename(".env.checktime");
     // 2) explicit file via CHECK_TIME_AGI_ENV_FILE, if provided
     if let Ok(custom_env) = std::env::var("CHECK_TIME_AGI_ENV_FILE") {
         let _ = dotenvy::from_filename(custom_env);
     }
-    // 3) .env in the same directory as the binary
+    // 3) .env.checktime in the same directory as the binary
     if let Ok(exe_path) = std::env::current_exe() {
         if let Some(dir) = exe_path.parent() {
-            let _ = dotenvy::from_filename(dir.join(".env"));
+            let _ = dotenvy::from_filename(dir.join(".env.checktime"));
         }
     }
     // 4) common system path fallback

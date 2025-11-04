@@ -14,6 +14,11 @@ struct Args {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // โหลด environment variables จากไฟล์ .env.pushnoti
+    if let Err(_) = dotenv::from_filename(".env.pushnoti") {
+        println!("Warning: .env.pushnoti file not found, using default values");
+    }
+    
     let args = Args::parse();
     
     // ตรวจสอบ environment variables สำหรับการเชื่อมต่อ database
@@ -50,7 +55,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Loop ส่ง HTTP request สำหรับแต่ละ agentid
     for agent_id in agent_ids {
         let url = format!(
-            "https://us-central1-softphone-dcallcenter.cloudfunctions.net/sendPush?ext={}&server=pbx-backoffice.osd.co.th",
+            "https://us-central1-softphone-dcallcenter.cloudfunctions.net/sendPush?ext={}&server=pbx-backoffice.osd.co.th%3A8089&mode=dev",
             agent_id
         );
         
@@ -71,6 +76,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 eprintln!("Agent {}: Error sending request: {}", agent_id, e);
             }
         }
+        
+        // Delay 0.5 วินาทีก่อนส่ง request ครั้งต่อไป
+        tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
+        println!("Waiting 0.5 seconds before next request...");
     }
     
     println!("Completed sending push notifications to all agents");

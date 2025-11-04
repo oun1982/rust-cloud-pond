@@ -1,0 +1,11 @@
+[package]
+name = "asterisk-ami"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+
+# ใช้ alias กันชนชื่อกับแพ็กเกจของเราเอง
+asterisk_ami_dep = { package = "asterisk-ami", version = "0.1.8" }
+chrono = "0.4"
